@@ -20,6 +20,12 @@ class DataIngestion:
         logging.info("Data Ingestion Initiated")
 
     def ingest_data_from_source(self):
+        """
+        This collects data from source, reads it as DataFrame
+        and stores a corresponding csv file for the raw data.
+        It also splits the raw csv into train and test csv files
+        All 3 csv files present in the artifacts folder of this project package.
+        """
         try:
             df=pd.read_csv(os.path.join("notebook","data","stdnt_perf.csv"))
         except Exception as e:
@@ -42,7 +48,7 @@ class DataIngestion:
         logging.info("Raw Data Split into train and test")
 
         try:
-            df.to_csv(self.ingest_config.train_data_path,index=False,header=True)
+            train_set.to_csv(self.ingest_config.train_data_path,index=False,header=True)
         except Exception as e:
             logging.info("Exception Occured,Could not create train data file")
             raise CustomException(e,sys)
@@ -50,7 +56,7 @@ class DataIngestion:
             logging.info("Train set moved to train_data_path")
         
         try:
-            df.to_csv(self.ingest_config.test_data_path,index=False,header=True)
+            test_set.to_csv(self.ingest_config.test_data_path,index=False,header=True)
         except Exception as e:
             logging.info("Exception Occured,Could not create train data file")
             raise CustomException(e,sys)
@@ -63,9 +69,9 @@ class DataIngestion:
             self.ingest_config.test_data_path
         )
 
-# if __name__=="__main__":
-#     ingestion_obj=DataIngestion()
-#     ingestion_obj.ingest_data_from_source()
+if __name__=="__main__":
+    ingestion_obj=DataIngestion()
+    ingestion_obj.ingest_data_from_source()
         
 
 
