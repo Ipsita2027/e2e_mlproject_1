@@ -8,7 +8,10 @@ import logging
 LOG_FILE=f"{datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.log"
 
 #create the logs directory if does not exist
-logs_path=os.path.join("..","logs")
+#The directory is relative to the terminal's cwd
+#so in terminal the cwd should be the project directory 
+#if logs are intended to be at the project level
+logs_path=os.path.join(".","logs")
 os.makedirs(logs_path,exist_ok=True)
 
 #comple log file path for the loggings to get logged :D)

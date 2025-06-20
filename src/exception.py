@@ -2,7 +2,7 @@ import sys
 import logging
 
 #import the setup root logger for session to generate logs
-from logger import logging
+from src.logger import logging
 
 def get_error_message(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
