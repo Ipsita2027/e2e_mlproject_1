@@ -1,6 +1,8 @@
 import sys
 import logging
-import logger
+
+#import the setup root logger for session to generate logs
+from logger import logging
 
 def get_error_message(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
@@ -17,3 +19,6 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
+# if __name__=="__main__":
+#     logging.info("Checking the logging from another module")
+#     logging.info("If the logging happens in the same file")
