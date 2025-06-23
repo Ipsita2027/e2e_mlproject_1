@@ -75,7 +75,7 @@ class DataTransformation:
         df_test=df_test.drop(columns=["math_score"])
 
         pre_train_arr=preprocessor_obj.fit_transform(df_train)
-        pre_test_arr=preprocessor_obj.fit_transform(df_test)
+        pre_test_arr=preprocessor_obj.transform(df_test)
 
         logging.info("The numerical columns standardized")
         logging.info("Categorical columns one hot encoded")
