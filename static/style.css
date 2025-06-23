@@ -1,0 +1,131 @@
+/* General Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* New Background: Deep, rich blue-green gradient */
+    background: linear-gradient(to right bottom, #022943, #022943); /* Dark, sophisticated blue-gray */
+    color: #e0e0e0; /* Lighter text for contrast */
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Container for the main content */
+.container {
+    background-color: rgba(255, 255, 255, 0.08); /* Slightly transparent white for a modern frosted glass effect */
+    padding: 60px 80px;
+    border-radius: 25px; /* Even more rounded corners */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1); /* Deeper shadow with inner glow */
+    text-align: center;
+    max-width: 650px; /* Slightly wider */
+    width: 90%;
+    margin: 20px;
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle, light border */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smoother animation */
+}
+
+.container:hover {
+    transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.15); /* Stronger shadow */
+}
+
+/* Heading Styling */
+h1 {
+    color: #f0f0f0; /* Very light color for strong contrast on dark background */
+    font-size: 3.8em; /* Even larger, more impactful heading */
+    margin-bottom: 30px;
+    font-weight: 800; /* Extra bold */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* More prominent text shadow */
+    letter-spacing: -1px; /* Tighter letter spacing for impact */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.3em; /* Larger, more legible paragraph text */
+    line-height: 1.7;
+    margin-bottom: 50px; /* More space before the button */
+    color: #c9d6df; /* Soft blue-gray for paragraph */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Action Button Styling */
+.action-button {
+    display: inline-block;
+    background: linear-gradient(to right, #6a1b9a, #9c27b0); /* Vibrant purple gradient */
+    color: #ffffff;
+    padding: 20px 45px; /* Even more generous padding */
+    border: none;
+    border-radius: 12px; /* More rounded */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em; /* Larger, more commanding text */
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smoother animation */
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.5); /* Stronger, colored shadow */
+    letter-spacing: 1px; /* Clearer letter spacing */
+    text-transform: uppercase; /* Uppercase for prominence */
+}
+
+.action-button:hover {
+    background: linear-gradient(to right, #7b1fa2, #ab47bc); /* Lighter purple on hover */
+    transform: translateY(-6px) scale(1.02); /* More lift and slight scale */
+    box-shadow: 0 18px 35px rgba(106, 27, 154, 0.6); /* Even stronger shadow */
+    letter-spacing: 1.5px; /* Expand letter spacing */
+}
+
+.action-button:active {
+    background: linear-gradient(to right, #5c1889, #8e24aa); /* Darker purple when active */
+    transform: translateY(-2px); /* Slight sink effect */
+    box-shadow: 0 8px 15px rgba(106, 27, 154, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 50px;
+        border-radius: 20px;
+    }
+    h1 {
+        font-size: 3em;
+        margin-bottom: 25px;
+    }
+    p {
+        font-size: 1.15em;
+        margin-bottom: 40px;
+    }
+    .action-button {
+        padding: 16px 35px;
+        font-size: 1.2em;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 30px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .action-button {
+        padding: 14px 30px;
+        font-size: 1.1em;
+        border-radius: 8px;
+    }
+}

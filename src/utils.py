@@ -32,3 +32,11 @@ def train_and_evaluate_models(models,X_train,X_test,y_train,y_test):
         model_training(models[models_list[i]])
 
     return (r2_scores_train,r2_scores_test)
+
+def load_object(file_path):
+    try:
+        with open(file_path,"rb") as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise CustomException(e,sys)
+    

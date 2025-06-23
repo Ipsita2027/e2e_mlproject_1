@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Form</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="../static/form_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Provide Student Details</h1>
+
+        <form action="{{url_for('predict_data_post')}}" method="POST" class="data-form">
+
+            <!-- Categorical Input: Gender -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+            </div>
+
+            <!-- Categorical Input: Race or Ethnicity -->
+            <div class="form-group">
+                <label for="race_ethnicity">Race or Ethnicity</label>
+                <select id="race_ethnicity" name="race_ethnicity" required>
+                    <option value="" disabled selected>Select race or ethnicity</option>
+                    <option value="group A">group A</option>
+                    <option value="group B">group B</option>
+                    <option value="group C">group C</option>
+                    <option value="group D">group D</option>
+                    <option value="group E">group E</option>
+                </select>
+            </div>
+
+            <!-- Categorical Input: Parental Level of Education -->
+            <div class="form-group">
+                <label for="parental_education">Parental Level of Education</label>
+                <select id="parental_education" name="parental_education" required>
+                    <option value="" disabled selected>Select education level</option>
+                    <option value="high school">high school</option>
+                    <option value="some college">some college</option>
+                    <option value="associate's degree">associate's degree</option>
+                    <option value="bachelor's degree">bachelor's degree</option>
+                    <option value="master's degree">master's degree</option>
+                    <option value="some high school">some high school</option>
+                </select>
+            </div>
+
+            <!-- Categorical Input: Lunch -->
+            <div class="form-group">
+                <label for="lunch">Lunch</label>
+                <select id="lunch" name="lunch" required>
+                    <option value="" disabled selected>Select lunch type</option>
+                    <option value="standard">standard</option>
+                    <option value="free/reduced">free/reduced</option>
+                </select>
+            </div>
+
+            <!-- Categorical Input: Test Preparation Course -->
+            <div class="form-group">
+                <label for="test_preparation_course">Test Preparation Course</label>
+                <select id="test_preparation_course" name="test_preparation_course" required>
+                    <option value="" disabled selected>Select option</option>
+                    <option value="completed">completed</option>
+                    <option value="none">none</option>
+                </select>
+            </div>
+
+            <!-- Numerical Input: Reading Score -->
+            <div class="form-group numerical-input">
+                <label for="reading_score">Reading Score (0-100)</label>
+                <div class="counter-control">
+                    <input type="number" id="reading_score" name="reading_score" min="0" max="100" value="50" required>
+                </div>
+            </div>
+
+            <!-- Numerical Input: Writing Score -->
+            <div class="form-group numerical-input">
+                <label for="writing_score">Writing Score (0-100)</label>
+                <div class="counter-control">
+                    <input type="number" id="writing_score" name="writing_score" min="0" max="100" value="50" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Data</button>
+        </form>
+
+        <!-- Container to display results -->
+        <div id="result-container" class="result-display">
+            <h2>The Expected Maths Score is:</h2>
+            {% if result %}
+                <pre>{{result}}</pre>
+            {% else %}
+                <p>No data submitted yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
